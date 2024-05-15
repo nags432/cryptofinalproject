@@ -1,0 +1,98 @@
+.help
+}
+    }
+        return true;
+        //}
+           //require(ind >= 0 && uint256(ind) < T.length, "Index does not exist");
+        //   uint256 ind = intToInd(leaves, coinJ * signedWeight, 0, globalAttestorsList.length);
+        //    uint256 coinJ = uint256(keccak256(HinJ)) % 10000000 / 10000000;
+        //    bytes memory HinJ = abi.encodePacked(j,sigsRoot,provenWeight,msg.sender,attestorRoot);
+        //for (uint256 j = 0; j < numReveals; j++) {
+        // Compute Hin_j, Coin_j
+        // verify sigs
+        }
+            require(MerkleProof.verify(T[i].attestorProof, attestorRoot, keccak256(abi.encodePacked(T[i].attestorAddress))), "Attestor proof failed");
+            require(MerkleProof.verify(T[i].sigsProof, sigsRoot, T[i].sigTuple.signature), "Signature proof failed");
+            // MerkleProof.verify(proof, root, leaf)
+        for (uint256 i = 0; i < T.length; i++) {
+        uint256 numReveals = (k + q) / Math.log2(signedWeight / provenWeight);
+        require(signedWeight > provenWeight, "signedWeight not greater than provenWeight");
+    function verifyCertificate(T_entry[] calldata T, bytes32 sigsRoot, uint256 signedWeight, uint256 provenWeight, uint256 k, uint256 q, Leaf[] calldata leaves) public view returns (bool) {
+    // remember the types of the public key you used (string)
+    }
+            return intToInd(arr, coin, mid + 1, end);
+            // search in the right half of mid
+            // If element at mid is smaller than coin,
+        else
+            return intToInd(arr, coin, start, mid - 1);
+        if (arr[mid].L > coin)
+        // search in the left half of mid
+        // If element at mid is greater than coin,
+        if (arr[mid].L <= coin && coin <= arr[mid].R) return uint256(mid);
+        // Compare mid with given key coin
+        uint256 mid = (start + end) / 2;
+        // Find the middle index
+        if (start > end) return 0;
+        // Base Condition
+    function intToInd(Leaf[] memory arr, uint256 coin, uint256 start, uint256 end) public pure returns (uint256) {
+    }
+        attestorRoot = root;
+    function storeRoot(bytes32 root) public {
+    }
+        return (attestor.pk, attestor.weight);
+        Attestor storage attestor = globalAttestorsList[index];
+        require(index < globalAttestorsList.length, "Index out of bounds");
+    function getAttestor(uint index) public view returns (address, uint) {
+    // Function to get an attestor by index
+    }
+        emit AttestorAdded(_attestor, 1);
+        // Emit an event for the addition of the new attestor
+        globalAttestorsList.push(newAttestor);
+        // Add the new attestor to the global list
+        });
+            weight: 1
+            pk: _attestor,
+        Attestor memory newAttestor = Attestor({
+        // Create a new Attestor struct with weight initialized to 1
+        globalAttestorsMap[_attestor] = true;
+        // Add new pk to map
+        require(!globalAttestorsMap[_attestor], "Attestor already exists");
+        require(_attestor != address(0), "Invalid address");
+    function addAttestor(address _attestor) public {
+    // Function to add a new attestor to the global list
+    event AttestorAdded(address indexed attestor, uint weight);
+    // Event to log the addition of a new attestor
+    using Strings for address;
+    using Math for uint256;
+    using MerkleProof for bytes32[];
+    bytes32 attestorRoot;
+    // Declare Attestors Merkle Root
+    Attestor[] public globalAttestorsList;
+    // Declare a dynamic array to hold the list of attestors
+    mapping(address => bool) public globalAttestorsMap;
+    // Declare a map make sure no duplicates exist
+    }
+        bytes32[] attestorProof;
+        bytes32 attestorAddress;
+        bytes32[] sigsProof;
+        Leaf sigTuple;
+    struct T_entry {
+    }
+        uint256 R;
+        uint256 L;
+        bytes32 signature;
+    struct Leaf {
+    // Define a struct for the Interval
+    }
+        uint weight;
+        address pk;
+    struct Attestor {
+    // Define a struct to hold the public key and weight
+contract AttestorRegistry {
+import "@openzeppelin/contracts/utils/Strings.sol";
+import "@openzeppelin/contracts/utils/math/Math.sol";
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+pragma solidity ^0.8.2;
+// SPDX-License-Identifier: MIT
+verifyCertificate()
+getContractFactory()
