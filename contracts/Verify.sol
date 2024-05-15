@@ -125,6 +125,8 @@ contract AttestorRegistry {
             require(MerkleProof.verify(T[i].sigsProof, stringToBytes32(sigsRoot), keccak256(bytes.concat(keccak256(abi.encode(T[i].sigTuple.signature))))), "Signature proof failed");
         }
 
+        // more to be done here regarding verification.
+
         return true;
     }
 

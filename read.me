@@ -1,15 +1,15 @@
-This is the submission for the final project for Nathan Nagulapalli
+This is the submission for the final project for Cryptography of Blockchains
 
 Small aside: I am using my wife's computer and for whatever reason her name is showing up on the git commit. I have no idea why, but to be clear, this project 
 was done 100% by me, with zero help from anyone.
 
-Unfortunately, the scope of this project was a bit overwhelming and I fear I bit off a bit more than I could chew.  Ultimately, we have the compact certificate method (generate.js)
-which generates all of the synthetic data (pks and signatures) required, and then proceeds to construct the compact certifcate accordingly primarily to the Micali paper.
+Unfortunately, the scope of this project was a bit overwhelming and I fear I bit off more than I could chew.  Ultimately, we have the compact certificate method (generate.js)
+which generates all of the synthetic data (pks and signatures) required, and then proceeds to construct the compact certifcate according primarily to the Micali paper.
 
 I developed a smart contract that also recieves the certificate as an input to the function, but unfortunately ran into trouble in verifying the merkle proofs.
 The smart contract compiles, but I chose to leave it out of the analysis.
 
-Instead I look at the size of all available signatures and the size of the certificate, achieiving multiple orders of magnitude decrease.
+Instead I look at the memory size of all available signatures compared to that of just the certificate, achieiving multiple orders of magnitude decrease.
 
 To run the script first download all packages necessary, then run:
 
