@@ -29,7 +29,7 @@ async function setup() {
 
     const privateStore = [];
 
-    let contractAddress = '0x9118EA4a52C6c7873729c8d8702cCd85E573f9E9';
+    let contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
     const AttestorRegistry = await hre.ethers.getContractFactory("AttestorRegistry");
     const attestorRegistry = await AttestorRegistry.attach(contractAddress);
 

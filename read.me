@@ -1,0 +1,23 @@
+This is the submission for the final project for Nathan Nagulapalli
+
+Unfortunately, the scope of this project was a bit overwhelming and I fear I bit off a bit more than I could chew.  Ultimately, we have the compact certificate method (generate.js)
+which generates all of the synthetic data (pks and signatures) required, and then proceeds to construct the compact certifcate accordingly primarily to the Micali paper.
+
+I developed a smart contract that also recieves the certificate as an input to the function, but unfortunately ran into trouble in verifying the merkle proofs.
+The smart contract compiles, but I chose to leave it out of the analysis.
+
+Instead I look at the size of all available signatures and the size of the certificate, achieiving multiple orders of magnitude decrease.
+
+To run the script first download all packages necessary, then run:
+
+$npx hardhat node
+
+in separate window:
+
+$npx hardhat run scripts/deploy.js --network localhost
+
+copy the contract value into line 32 of generate.js 
+
+$npx hardhat run scripts/generate.js --network localhost
+
+look in data folder to find allSignatures and certificate saved.
