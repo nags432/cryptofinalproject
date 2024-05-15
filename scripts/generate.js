@@ -5,19 +5,9 @@ const hre = require("hardhat");
 const { ethers } = require("ethers");
 const fs = require("fs");
 
-
-
-//const msgHash = EthCrypto.hash.keccak256('Hello! This is a test');
-//const signature = EthCrypto.sign(signerIdentity.privateKey, msgHash);
-
-//console.log(signature);
-
-//const signer = EthCrypto.recoverPublicKey(signature, EthCrypto.hash.keccak256('Hello! This is a wrong test'));
-//console.log(signer == signerIdentity.publicKey)
-
 async function setup() {
 
-    // Ensure you're connected to the right network
+    // Connect to the right network
     const network = await hre.ethers.provider.getNetwork();
     console.log(`Connected to network: ${network.name} (chainId: ${network.chainId})`);
 
@@ -34,7 +24,6 @@ async function setup() {
     const attestorRegistry = await AttestorRegistry.attach(contractAddress);
 
     console.log("AttestorRegistry attached to:", attestorRegistry.address);
-    //console.log("AttestorRegistry methods:", attestorRegistry);
 
 
     var i = 6000;
@@ -134,7 +123,7 @@ async function setup() {
     }
 
     
-
+    // merkle tree for signatures
     function buildMerkleTree(leaves) {
         const merkleLeaves = [];
         const values = ['string'];
@@ -151,6 +140,7 @@ async function setup() {
 
     const sigTree = buildMerkleTree(sigs);
 
+    // merkle tree for attestors
     const values = ["string", "uint256"];
     const merkleLeaves = [];
     for (data of globalAttestorsList) {
